@@ -9,3 +9,7 @@
 ## Диаграма
 
 ![alt text](./facade-diag.png "Facade")
+
+---
+
+## [Another Example](./Nice%20Example/)
