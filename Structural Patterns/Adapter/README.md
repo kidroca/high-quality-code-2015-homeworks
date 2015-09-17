@@ -11,7 +11,7 @@
 
 ![alt text](./adapter-demo.png "Simple Demo") 
 
-## 
+--- 
 
 ## Извадка от BasicProxy:
 
