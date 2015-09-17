@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmericanDash.cs" />
-    <Compile Include="CarComputer.cs" />
+    <Compile Include="JapanCarComputer.cs" />
     <Compile Include="Dash.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EuropeanDash.cs" />

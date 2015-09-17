@@ -19,11 +19,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.108" />
   </Class>
-  <Class Name="AdapterPatternExample.CarComputer">
-    <Position X="3.25" Y="4" Width="1.5" />
+  <Class Name="AdapterPatternExample.JapanCarComputer">
+    <Position X="3.25" Y="4" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CarComputer.cs</FileName>
+      <FileName>JapanCarComputer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdapterPatternExample.Driver">
@@ -49,7 +49,7 @@
   </Class>
   <Class Name="AdapterPatternExample.Dash">
     <Position X="0.5" Y="4" Width="1.5" />
-    <AssociationLine Name="computer" Type="AdapterPatternExample.CarComputer">
+    <AssociationLine Name="computer" Type="AdapterPatternExample.JapanCarComputer">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.093" Y="-0.265" />
       </MemberNameLabel>

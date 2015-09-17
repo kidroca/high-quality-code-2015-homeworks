@@ -7,9 +7,9 @@ namespace AdapterPatternExample
 {
     public abstract class Dash
     {
-        protected CarComputer computer;
+        protected JapanCarComputer computer;
 
-        public double GetSpeed(CarComputer computer)
+        public double GetSpeed(JapanCarComputer computer)
         {
             return computer.CurentSpeed();
         }

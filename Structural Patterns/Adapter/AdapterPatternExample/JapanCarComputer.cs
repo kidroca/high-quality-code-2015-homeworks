@@ -1,6 +1,6 @@
 ﻿namespace AdapterPatternExample
 {
-    public class CarComputer
+    public class JapanCarComputer
     {
         public double CurentSpeed()
         {
