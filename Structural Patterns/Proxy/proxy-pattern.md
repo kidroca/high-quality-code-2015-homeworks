@@ -16,3 +16,10 @@
 **Диаграма**:
 
 ![alt text](./proxy-demo.png "Simple Proxy")  
+
+**Извадка от BasicProxy**:
+
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
