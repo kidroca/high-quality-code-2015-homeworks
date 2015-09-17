@@ -13,7 +13,7 @@
 
 --- 
 
-## Извадка от BasicProxy:
+## Извадка с примерен код:
 
 ```C#
 public class CarComputer
