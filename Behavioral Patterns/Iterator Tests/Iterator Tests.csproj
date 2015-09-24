@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35A2C108-BE9B-445B-9094-CD0FF8A3EAB6}</ProjectGuid>
+    <ProjectGuid>{5EDDB5B1-1916-4D05-A716-113973A3B977}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChainOfResponsibility.Tests</RootNamespace>
-    <AssemblyName>Chain of Responsibility Tests</AssemblyName>
+    <RootNamespace>Iterator_Tests</RootNamespace>
+    <AssemblyName>Iterator Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,20 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChainTests.cs" />
+    <Compile Include="IteratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chain of Responsibility\Chain of Responsibility.csproj">
-      <Project>{b456948d-29e7-423c-bdb7-02575bbdfcb8}</Project>
-      <Name>Chain of Responsibility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Helpers\HomeworkHelpers.csproj">
       <Project>{95a6dbbc-47d3-4856-acef-bef247db8893}</Project>
       <Name>HomeworkHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Iterator\Iterator.csproj">
+      <Project>{c0387d95-c947-4442-88aa-f4d5c56827aa}</Project>
+      <Name>Iterator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

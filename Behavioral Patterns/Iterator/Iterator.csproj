@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35A2C108-BE9B-445B-9094-CD0FF8A3EAB6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{C0387D95-C947-4442-88AA-F4D5C56827AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChainOfResponsibility.Tests</RootNamespace>
-    <AssemblyName>Chain of Responsibility Tests</AssemblyName>
+    <RootNamespace>Iterator</RootNamespace>
+    <AssemblyName>Iterator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,21 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChainTests.cs" />
+    <Compile Include="Aggregate.cs" />
+    <Compile Include="IIterator.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="MatrixReverseIterator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Chain of Responsibility\Chain of Responsibility.csproj">
-      <Project>{b456948d-29e7-423c-bdb7-02575bbdfcb8}</Project>
-      <Name>Chain of Responsibility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Helpers\HomeworkHelpers.csproj">
-      <Project>{95a6dbbc-47d3-4856-acef-bef247db8893}</Project>
-      <Name>HomeworkHelpers</Name>
-    </ProjectReference>
+    <None Include="Iterator.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

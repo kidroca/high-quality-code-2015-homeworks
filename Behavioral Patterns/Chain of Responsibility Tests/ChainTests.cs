@@ -6,7 +6,7 @@
     using ChainOfResponsibility.Requests;
     using HomeworkHelpers;
 
-    class Tests
+    class ChainTests
     {
         static TextHelper helper = new TextHelper();
 
