@@ -8,7 +8,7 @@
 
 ## Диаграма
 
-![alt text](./chain.gif "Chain of Responsibility")
+![alt text](./chain.jpg "Chain of Responsibility")
 
 ---
 
@@ -19,7 +19,7 @@ public string Handle(object request, RequestType type)
 {
     var currentRequest = new StorageRequest(request, type);
     
-    foreach (var handler in Chain)
+    foreach (var handler in this.Chain)
     {
         handler.Handle(currentRequest);
         if (currentRequest.Result)

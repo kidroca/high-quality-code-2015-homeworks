@@ -14,7 +14,7 @@
         {
             var currentRequest = new StorageRequest(request, type);
             
-            foreach (var handler in Chain)
+            foreach (var handler in this.Chain)
             {
                 handler.Handle(currentRequest);
                 if (currentRequest.Result)
