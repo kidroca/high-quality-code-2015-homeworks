@@ -9,3 +9,36 @@
 	* Има зависимост в каква последователност ще се извикат констукторите
 
 Често този шаблон се допълва с някой от другите шаблони за създаване, като Factory.	
+
+## Диаграма:
+
+![alt text](./tv-builder.png "Builder") 
+
+---
+
+## TV_Builder.cs
+
+```C#
+public class TV_Builder
+{
+    public TV BuildCheapTV()
+    {
+        var cheapTB = new TV();
+        cheapTB.ControlBoard = new CheapBoard();
+        cheapTB.DisplayMatrix = new CheapMatrix();
+        cheapTB.Remote = new SmallRemote();
+
+        return cheapTB;
+    }
+
+    public TV BuildDeluxeTV()
+    {
+        var deluxeTV = new TV();
+        deluxeTV.ControlBoard = new DeluxeBoard();
+        deluxeTV.DisplayMatrix = new DeluxeMatrix();
+        deluxeTV.Remote = new BigRemote();
+
+        return deluxeTV;
+    }
+}
+```
