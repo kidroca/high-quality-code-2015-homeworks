@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Strategy.FuelSaveEconomy">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>FuelSaveEconomy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Strategy.AggressiveEconomy">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>AggressiveEconomy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Strategy.StandardEconomy">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>StandardEconomy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Strategy.FuelEconomy">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="text" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAEAEIAAAAAAAAAAAgIAAAAAAAAAAA=</HashCode>
+      <FileName>FuelEconomy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Strategy.TripComputer">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="FuelIconomy" Type="Strategy.FuelEconomy">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.652" Y="-0.367" Height="0.182" Width="1.173" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TripComputer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FuelIconomy" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

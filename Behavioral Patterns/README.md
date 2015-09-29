@@ -7,3 +7,5 @@
 ## [Iterator](./Iterator/)
 
 ## [Template Method](./Template%20Method/)
+
+## [Strategy](./Strategy/)
