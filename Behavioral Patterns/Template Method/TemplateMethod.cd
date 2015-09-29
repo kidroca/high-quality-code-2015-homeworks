@@ -2,6 +2,10 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="TemplateMethod.WashingMachineProgram">
     <Position X="3.25" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="multipleWhite" Hidden="true" />
+      <Field Name="text" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAgABACAAAAAAAIAAAAAABAAAAAAAAAIBAAAAAIAAAA=</HashCode>
       <FileName>WashingMachineProgram.cs</FileName>
