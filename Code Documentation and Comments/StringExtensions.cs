@@ -2,7 +2,8 @@
 //     Telerik. All rights reserved.
 // </copyright>
 // <author>SomeStudent</author>
-namespace Telerik.ILS.Common
+
+namespace StringExtensions
 {
     using System;
     using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Telerik.ILS.Common
         /// Message Digest 5 (MD5) hash generator
         /// </summary>
         /// <param name="input">Input is a string</param>
-        /// <returns>32bit hexidecimal MD5 hash tag</returns>
+        /// <returns>32bit hexadecimal MD5 hash tag</returns>
         public static string ToMd5Hash(this string input)
         {
             var md5Hash = MD5.Create();
@@ -32,14 +33,14 @@ namespace Telerik.ILS.Common
             var builder = new StringBuilder();
 
             // Convert to hex string
-            for (int i = 0; i < data.Length; i++)
+            foreach (byte b in data)
             {
-                builder.Append(data[i].ToString("x2"));
+                builder.Append(b.ToString("x2"));
             }
 
             return builder.ToString();
         }
-        
+
         /// <summary>
         /// Checks if the given value is string representation of the boolean value: true
         /// </summary>
@@ -98,7 +99,7 @@ namespace Telerik.ILS.Common
             DateTime.TryParse(input, out dateTimeValue);
             return dateTimeValue;
         }
-        
+
         /// <summary>
         /// Capitalizes the first letter of the given string according to current culture settings
         /// </summary>
@@ -154,20 +155,23 @@ namespace Telerik.ILS.Common
         public static string ConvertCyrillicToLatinLetters(this string input)
         {
             var bulgarianLetters = new[]
-                                       {
-                                           "а", "б", "в", "г", "д", "е", "ж", "з", "и", "й", "к", "л", "м", "н", "о", "п",
-                                           "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ь", "ю", "я"
-                                       };
+            {
+                "а", "б", "в", "г", "д", "е", "ж", "з", "и", "й", "к", "л", "м", "н", "о", "п",
+                "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ь", "ю", "я"
+            };
             var latinRepresentationsOfBulgarianLetters = new[]
-                                                             {
-                                                                 "a", "b", "v", "g", "d", "e", "j", "z", "i", "y", "k",
-                                                                 "l", "m", "n", "o", "p", "r", "s", "t", "u", "f", "h",
-                                                                 "c", "ch", "sh", "sht", "u", "i", "yu", "ya"
-                                                             };
+            {
+                "a", "b", "v", "g", "d", "e", "j", "z", "i", "y", "k",
+                "l", "m", "n", "o", "p", "r", "s", "t", "u", "f", "h",
+                "c", "ch", "sh", "sht", "u", "i", "yu", "ya"
+            };
+
             for (var i = 0; i < bulgarianLetters.Length; i++)
             {
                 input = input.Replace(bulgarianLetters[i], latinRepresentationsOfBulgarianLetters[i]);
-                input = input.Replace(bulgarianLetters[i].ToUpper(), latinRepresentationsOfBulgarianLetters[i].CapitalizeFirstLetter());
+                input = input.Replace(
+                    bulgarianLetters[i].ToUpper(),
+                    latinRepresentationsOfBulgarianLetters[i].CapitalizeFirstLetter());
             }
 
             return input;
@@ -181,17 +185,17 @@ namespace Telerik.ILS.Common
         public static string ConvertLatinToCyrillicKeyboard(this string input)
         {
             var latinLetters = new[]
-                                   {
-                                       "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-                                       "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-                                   };
+            {
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+                "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+            };
 
             var bulgarianRepresentationOfLatinKeyboard = new[]
-                                                             {
-                                                                 "а", "б", "ц", "д", "е", "ф", "г", "х", "и", "й", "к",
-                                                                 "л", "м", "н", "о", "п", "я", "р", "с", "т", "у", "ж",
-                                                                 "в", "ь", "ъ", "з"
-                                                             };
+            {
+                "а", "б", "ц", "д", "е", "ф", "г", "х", "и", "й", "к",
+                "л", "м", "н", "о", "п", "я", "р", "с", "т", "у", "ж",
+                "в", "ь", "ъ", "з"
+            };
 
             for (int i = 0; i < latinLetters.Length; i++)
             {
@@ -214,7 +218,7 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Converts cyrillic characters to latin, replaces spaces with dashes, 
+        /// Converts cyrillic characters to latin, replaces spaces with dashes,
         /// removes non letter characters except digits, the underscore, the dash and the dot.
         /// </summary>
         /// <param name="input">A filename</param>
@@ -266,19 +270,19 @@ namespace Telerik.ILS.Common
         public static string ToContentType(this string fileExtension)
         {
             var fileExtensionToContentType = new Dictionary<string, string>
-                                                 {
-                                                     { "jpg", "image/jpeg" },
-                                                     { "jpeg", "image/jpeg" },
-                                                     { "png", "image/x-png" },
-                                                     {
-                                                         "docx",
-                                                         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                                                     },
-                                                     { "doc", "application/msword" },
-                                                     { "pdf", "application/pdf" },
-                                                     { "txt", "text/plain" },
-                                                     { "rtf", "application/rtf" }
-                                                 };
+            {
+                { "jpg", "image/jpeg" },
+                { "jpeg", "image/jpeg" },
+                { "png", "image/x-png" },
+                {
+                    "docx",
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                },
+                { "doc", "application/msword" },
+                { "pdf", "application/pdf" },
+                { "txt", "text/plain" },
+                { "rtf", "application/rtf" }
+            };
             if (fileExtensionToContentType.ContainsKey(fileExtension.Trim()))
             {
                 return fileExtensionToContentType[fileExtension.Trim()];

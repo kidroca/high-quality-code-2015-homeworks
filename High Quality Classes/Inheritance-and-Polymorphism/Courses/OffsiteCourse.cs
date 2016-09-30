@@ -59,10 +59,8 @@
 
                 return result.ToString();
             }
-            else
-            {
-                return base.ToString();
-            }  
+
+            return base.ToString();
         }
     }
 }

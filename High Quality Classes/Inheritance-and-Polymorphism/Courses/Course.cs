@@ -5,25 +5,25 @@
 
     public abstract class Course
     {
+        private readonly IList<string> students = new List<string>();
+
         private string name;
 
         private string teacher;
 
-        private IList<string> students = new List<string>();
-
-        public Course(string courseName)
+        protected Course(string courseName)
         {
             this.Name = courseName;
             this.Teacher = null;
         }
 
-        public Course(string courseName, string teacher)
+        protected Course(string courseName, string teacher)
             : this(courseName)
         {
             this.Teacher = teacher;
         }
 
-        public Course(string courseName, string teacher, IList<string> students)
+        protected Course(string courseName, string teacher, IList<string> students)
             : this(courseName, teacher)
         {
             this.AddStudents(students);
@@ -56,32 +56,29 @@
                 {
                     CourseValidations.ValidateHumanName(value);
                 }
-                
+
                 this.teacher = value;
             }
         }
 
         public IList<string> Students
         {
-            get
-            {
-                return new List<string>(this.students);
-            }
+            get { return new List<string>(this.students); }
         }
 
         public void AddStudents(params string[] list)
         {
-            foreach (string name in list)
+            foreach (var studentName in list)
             {
-                this.AddStudent(name);
+                this.AddStudent(studentName);
             }
         }
 
-        public void AddStudents(IList<string> students)
+        public void AddStudents(IList<string> studentsList)
         {
-            foreach (string name in students)
+            foreach (var studentName in studentsList)
             {
-                this.AddStudent(name);
+                this.AddStudent(studentName);
             }
         }
 
@@ -92,7 +89,7 @@
 
         public override string ToString()
         {
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
 
             result.Append("LocalCourse { Name = ");
             result.Append(this.Name);
@@ -123,10 +120,8 @@
             {
                 return "{ }";
             }
-            else
-            {
-                return "{ " + string.Join(", ", this.Students) + " }";
-            }
+
+            return "{ " + string.Join(", ", this.Students) + " }";
         }
     }
 }

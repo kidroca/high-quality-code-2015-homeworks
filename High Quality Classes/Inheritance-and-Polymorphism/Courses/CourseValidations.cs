@@ -7,19 +7,19 @@
     {
         public static void ValidateCourseName(string name)
         {
-            string invalidCharacters = @"[^\w\s]";
-            ValidateString(name, invalidCharacters);       
+            var invalidCharacters = @"[^\w\s]";
+            ValidateString(name, invalidCharacters);
         }
 
         public static void ValidateHumanName(string name)
         {
-            string invalidCharacters = @"[^A-Za-z\s]";
+            var invalidCharacters = @"[^A-Za-z\s]";
             ValidateString(name, invalidCharacters);
         }
 
         public static void ValidateLabName(string name)
         {
-            string invalidCharacters = @"[^\w\d]";
+            var invalidCharacters = @"[^\w\d]";
             ValidateString(name, invalidCharacters);
         }
 

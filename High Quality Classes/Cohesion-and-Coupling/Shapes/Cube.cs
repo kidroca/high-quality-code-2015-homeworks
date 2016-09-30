@@ -2,11 +2,10 @@
 {
     public class Cube
     {
-        private double width;
+        private double depth;
 
         private double height;
-
-        private double depth;
+        private double width;
 
         public Cube(double width, double height, double depth)
         {
@@ -24,8 +23,8 @@
 
             set
             {
-               ShapeValidations.ValidateSide(value, "width");
-               this.width = value;
+                ShapeValidations.ValidateSide(value, "width");
+                this.width = value;
             }
         }
 
@@ -55,6 +54,6 @@
                 ShapeValidations.ValidateSide(value, "Depth");
                 this.depth = value;
             }
-        } 
+        }
     }
 }

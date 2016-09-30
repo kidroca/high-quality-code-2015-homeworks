@@ -1,9 +1,20 @@
 ﻿namespace GameFifteen
 {
-    using System;
+    using UserInteraction;
 
-    public class MainClass
+    public class StartUp
     {
+        private static readonly UserInterface Console = MatrixUserInterface.GetInstance();
+
+        private static void Main()
+        {
+            int dimensions = GetUserInput();
+
+            Matrix matrix = new Matrix(dimensions);
+
+            Console.WriteLine(matrix);
+        }
+
         private static int GetUserInput()
         {
             Console.Write("Enter a positive number between 1 and 100: ");
@@ -19,15 +30,6 @@
             {
                 return n;
             }
-        }
-
-        private static void Main()
-        {
-            int n = GetUserInput();
-
-            Matrix matrix = new Matrix(n);
-
-            Console.WriteLine(matrix);
         }
     }
 }

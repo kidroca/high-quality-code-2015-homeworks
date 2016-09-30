@@ -42,7 +42,7 @@
                 {
                     CourseValidations.ValidateLabName(value);
                 }
-                
+
                 this.lab = value;
             }
         }
@@ -61,10 +61,8 @@
                 result.Append("}");
                 return result.ToString();
             }
-            else
-            {
-                return base.ToString();
-            }
+
+            return base.ToString();
         }
     }
 }

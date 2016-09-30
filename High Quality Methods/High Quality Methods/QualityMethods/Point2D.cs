@@ -19,7 +19,7 @@
 
         public bool IsHorizontalTo(Point2D point)
         {
-            if (this.Y == point.Y)
+            if (Math.Abs(this.Y - point.Y) < 0.002)
             {
                 return true;
             }
@@ -31,7 +31,7 @@
 
         public bool IsVerticalTo(Point2D point)
         {
-            if (this.X == point.X)
+            if (Math.Abs(this.X - point.X) < 0.002)
             {
                 return true;
             }
@@ -48,8 +48,8 @@
                    x2 = point.X,
                    y2 = point.Y;
 
-            double distance = Math.Sqrt(Math.Pow((x2 - x1), 2) +
-                                        Math.Pow((y2 - y1), 2));
+            double distance = Math.Sqrt(Math.Pow(x2 - x1, 2) +
+                                        Math.Pow(y2 - y1, 2));
 
             return distance;
         }

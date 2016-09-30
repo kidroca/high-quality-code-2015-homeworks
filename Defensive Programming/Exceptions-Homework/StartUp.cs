@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class ExceptionsHomework
+    public class StartUp
     {
         public static T[] Subsequence<T>(T[] arr, int startIndex, int count)
         {

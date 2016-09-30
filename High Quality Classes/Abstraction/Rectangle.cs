@@ -2,11 +2,10 @@
 {
     using System;
 
-   public class Rectangle : IFiguresGeometryMethods
+    public class Rectangle : IShape
     {
-        private double width;
-
         private double height;
+        private double width;
 
         public Rectangle(double side)
         {
@@ -20,7 +19,7 @@
             this.Height = height;
         }
 
-        public virtual double Width 
+        public double Width
         {
             get
             {
@@ -29,12 +28,12 @@
 
             set
             {
-                ValidateSide(value, "Width");
+                this.ValidateSide(value, "Width");
                 this.width = value;
             }
         }
 
-        public virtual double Height 
+        public double Height
         {
             get
             {
@@ -43,29 +42,29 @@
 
             set
             {
-                ValidateSide(value, "Height");
+                this.ValidateSide(value, "Height");
                 this.height = value;
             }
         }
 
         public double CalculatePerimeter()
         {
-            double perimeter = 2 * (this.Width + this.Height);
+            var perimeter = 2 * (this.Width + this.Height);
             return perimeter;
         }
 
         public double CalculateSurface()
         {
-            double surface = this.Width * this.Height;
+            var surface = this.Width * this.Height;
             return surface;
         }
 
-       private void ValidateSide(double side, string name) 
-       {
-           if (side <= 0)
-           {
-               throw new ArgumentException(name + " must be greater than zero");
-           }
-       }
+        private void ValidateSide(double side, string name)
+        {
+            if (side <= 0)
+            {
+                throw new ArgumentException(name + " must be greater than zero");
+            }
+        }
     }
 }

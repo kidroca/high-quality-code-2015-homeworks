@@ -15,7 +15,7 @@
         }
 
         public Student(string firstName, string lastName, DateTime bornOn, string otherInfo)
-            : this(firstName, lastName, bornOn) 
+            : this(firstName, lastName, bornOn)
         {
             this.OtherInfo = otherInfo;
         }
@@ -26,7 +26,7 @@
 
         public string OtherInfo { get; set; }
 
-        public DateTime BirthDay 
+        public DateTime BirthDay
         {
             get
             {

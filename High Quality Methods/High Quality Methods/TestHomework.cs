@@ -41,7 +41,7 @@
 
             Console.WriteLine(
                 "{0} older than {1} -> {2}",
-                peter.FirstName, 
+                peter.FirstName,
                 stella.FirstName,
                 peter.IsOlderThan(stella));
         }

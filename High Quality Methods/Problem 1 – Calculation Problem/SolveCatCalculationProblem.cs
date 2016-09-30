@@ -19,6 +19,6 @@ namespace Telerik.Exams.CSharp2
         {
             var result = input.Split(' ');
             return result;
-        } 
+        }
     }
 }

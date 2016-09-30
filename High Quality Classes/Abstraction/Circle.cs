@@ -1,8 +1,8 @@
-﻿using System;
-
-namespace Abstraction
+﻿namespace Abstraction
 {
-    public class Circle : IFiguresGeometryMethods
+    using System;
+
+    public class Circle : IShape
     {
         private double radius;
 
@@ -11,7 +11,7 @@ namespace Abstraction
             this.Radius = radius;
         }
 
-        public virtual double Radius 
+        public double Radius
         {
             get
             {
@@ -31,13 +31,13 @@ namespace Abstraction
 
         public double CalculatePerimeter()
         {
-            double perimeter = 2 * Math.PI * this.Radius;
+            var perimeter = 2 * Math.PI * this.Radius;
             return perimeter;
         }
 
         public double CalculateSurface()
         {
-            double surface = Math.PI * this.Radius * this.Radius;
+            var surface = Math.PI * this.Radius * this.Radius;
             return surface;
         }
     }

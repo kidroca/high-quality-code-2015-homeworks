@@ -1,46 +1,45 @@
 ﻿namespace TestsForStringExtensions
 {
     using System;
-    using Telerik.ILS.Common;
+    using StringExtensions;
 
-   public class TestMethods
+    public class TestMethods
     {
-       // Do not evaluate this it isn't a part of the homework
-
+        // Do not evaluate this it isn't a part of the homework
         private static void Main(string[] args)
         {
             string abc = "abc";
 
-            string testMD5 = StringExtensions.ToMd5Hash(abc);
+            string testMD5 = abc.ToMd5Hash();
             Console.WriteLine(testMD5);
 
             string startString = "starty",
                     endString = "endy",
                     inputString = "the starty is longer than endy so what";
 
-            string testGetStringsBetween = StringExtensions.GetStringBetween(inputString, startString, endString, 2);
+            string testGetStringsBetween = inputString.GetStringBetween(startString, endString, 2);
             Console.WriteLine(testGetStringsBetween);
 
-            Console.WriteLine(StringExtensions.CapitalizeFirstLetter(abc));
+            Console.WriteLine(abc.CapitalizeFirstLetter());
 
             string abtz = "абц";
-            Console.WriteLine(StringExtensions.ConvertCyrillicToLatinLetters(abtz));
+            Console.WriteLine(abtz.ConvertCyrillicToLatinLetters());
 
-            Console.WriteLine(StringExtensions.ConvertCyrillicToLatinLetters(abtz + abc));
+            Console.WriteLine((abtz + abc).ConvertCyrillicToLatinLetters());
 
             string testUserName = "@#%$^Chov3k4#eP14";
-            Console.WriteLine(StringExtensions.ToValidUsername(testUserName));
+            Console.WriteLine(testUserName.ToValidUsername());
 
-            Console.WriteLine(StringExtensions.ToValidLatinFileName(testUserName + " e palen bom-bok"));
+            Console.WriteLine((testUserName + " e palen bom-bok").ToValidLatinFileName());
 
-            Console.WriteLine(StringExtensions.GetFirstCharacters(abc, 2));
+            Console.WriteLine(abc.GetFirstCharacters(2));
 
             string testFileExtensions = "strange.file.txt";
-            Console.WriteLine(StringExtensions.GetFileExtension(testFileExtensions));
+            Console.WriteLine(testFileExtensions.GetFileExtension());
 
-            Console.WriteLine(StringExtensions.ToContentType("docx"));
+            Console.WriteLine("docx".ToContentType());
 
-            byte[] testByteArray = StringExtensions.ToByteArray(abc);
+            byte[] testByteArray = abc.ToByteArray();
 
             foreach (var item in testByteArray)
             {
