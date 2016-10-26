@@ -34,11 +34,12 @@ HtmlFactory.prototype.serialize = function (data) {
     for (var key in data) if (data.hasOwnProperty(key)) {
 
         var el = doc.createElement(key);
-        el.innerHtml = data[key];
+        el.textContent = data[key];
         wrapper.appendChild(el);
     }
 
-    return wrapper.outerHTML;
+    var html =  wrapper.outerHTML;
+    return html.split('><').join('>\n<');
 };
 
 HtmlFactory.prototype.createDocument = function () {
