@@ -17,9 +17,9 @@ var asHtml = htmlFactory.serialize(testData);
 
 console.log('AS JSON'.underline.green);
 console.log('');
-console.log(asJson);
+console.log(asJson.magenta);
 
 console.log('');
 console.log('AS HTML'.underline.green);
 console.log('');
-console.log(asHtml);
+console.log(asHtml.grey);
