@@ -33,7 +33,7 @@ JsonFactory.prototype.serialize = function (data) {
     // We can create our own implementation of this method and since we are using
     // a factory it wont require to modify the application logic that is using the
     // result
-    return JSON.stringify(data);
+    return JSON.stringify(data, null, '\t');
 };
 
 /**
