@@ -2,6 +2,8 @@
  * @module AbstractDocumentFactory
  * Defines the interface for creating different web documents like
  * XML, HTML, JSON and others
+ * Such factory can be used as serializing/deserialing middleware for HTTP
+ * requests/responses without altering the rest of the application implementation
  */
 
 /**
