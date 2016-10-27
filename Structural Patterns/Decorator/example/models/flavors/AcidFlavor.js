@@ -26,8 +26,8 @@ AcidFlavor.prototype.taste = function () {
         return baseTaste + ', ' + addedTaste;
     }
     else {
-        this._coffee.isDecorated = true;
-        return baseTaste + 'with ' + addedTaste;
+        this.isDecorated = true;
+        return baseTaste + ' with ' + addedTaste;
     }
 };
 
