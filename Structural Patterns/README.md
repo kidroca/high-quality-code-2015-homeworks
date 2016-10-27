@@ -7,3 +7,5 @@
 ## [Facade](./Facade/)
 
 ## [Proxy](./Proxy/)
+
+## [Decorator](./Decorator/)
