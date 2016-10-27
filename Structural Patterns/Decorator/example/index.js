@@ -3,7 +3,7 @@
  */
 
 require('colors');
-var prompter = require('single-prompt');
+var prompter = require('inquirer');
 
 // Models
 var Espresso = require('./models/Espresso');
@@ -16,12 +16,19 @@ var coffee = null;
 startUp();
 
 function startUp() {
-    console.log('Welcome, would you like a coffee?'.underline.cyan);
+    console.log('Welcome!!!'.underline.cyan);
+    console.log('');
+
+    var prompt = {
+        type: 'confirm',
+        name: 'coffee',
+        message: 'Would you like an espresso'.green
+    };
 
     prompter
-        .prompt('Would you like an espresso'.green, ['y', 'n'])
-        .then(function(choice) {
-            if (choice === 'y') {
+        .prompt(prompt)
+        .then(function(choices) {
+            if (choices.coffee) {
                 coffee = new Espresso();
                 playBall();
             }
@@ -38,26 +45,35 @@ function playBall() {
 }
 
 function printState() {
+    console.log('');
     console.log('Coffee cost: %s', coffee.price);
     console.log('');
 
     console.log('Your coffee tastes like:');
     console.log(coffee.taste().magenta);
+    console.log('');
+
 }
 
 function chooseDecoration() {
+    var prompt = {
+        type: 'list',
+        name: 'decoration',
+        message: 'What would you like to add'.green,
+        choices: ['sugar', 'milk', 'acid', 'quit']
+    };
+
     prompter
-        .prompt('What would you like to add'.green, ['sugar', 'milk', 'acid', 'quit'])
-        .then(function(choice) {
-            if (choice !== 'quit') {
-                wrap(choice);
+        .prompt(prompt)
+        .then(function(choices) {
+            if (choices.decoration !== 'quit') {
+                wrap(choices.decoration);
                 playBall();
             }
             else {
                 quit();
             }
         });
-
 }
 
 function wrap(decoration) {
@@ -80,5 +96,5 @@ function wrap(decoration) {
 
 function quit() {
     console.log('Game over, you lose'.bold.red);
+    process.exit(0);
 }
-
