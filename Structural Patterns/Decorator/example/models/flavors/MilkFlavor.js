@@ -3,9 +3,11 @@
  */
 
 var Coffee = require('../Coffee');
+var Tastable = require('./Tastable');
 
 /**
  * @implements Coffee
+ * @extends Tastable
  * @param {Coffee} coffee
  * @class
  */
@@ -14,21 +16,14 @@ function MilkFlavor(coffee) {
     this.price = coffee.price + 0.5;
 }
 
-MilkFlavor.prototype = Object.create(Coffee.prototype, {
+MilkFlavor.prototype = Object.create(Object.assign({}, Coffee.prototype, Tastable.prototype), {
     constructor: {value: MilkFlavor}
 });
 
 MilkFlavor.prototype.taste = function () {
-    var baseTaste = this._coffee.taste();
     var addedTaste = 'a bit of milk';
 
-    if (this._coffee.isDecorated) {
-        return baseTaste + ', ' + addedTaste;
-    }
-    else {
-        this.isDecorated = true;
-        return baseTaste + ' with ' + addedTaste;
-    }
+    return this.addTaste(addedTaste);
 };
 
 module.exports = MilkFlavor;
